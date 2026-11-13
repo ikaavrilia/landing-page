@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasi Goreng Spesial - Lezat, Gurih & Menggugah Selera</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins & Volkhov -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Volkhov:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#D92626',
+                            orange: '#F26D21',
+                            amber: '#F29F05',
+                            dark: '#1C0D0A',
+                            brown: '#3A1E14',
+                            cream: '#FFF8F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Volkhov', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(28, 13, 10, 0.92) 0%, rgba(58, 30, 20, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #F26D21 0%, #F29F05 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-gray-800 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-brown/40 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white font-bold text-xl shadow-md">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <span class="text-xl sm:text-2xl font-extrabold text-white tracking-wide">
+                    Nasgor<span class="text-brand-amber">Spesial</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-200">
+                <a href="#home" class="hover:text-brand-amber transition-colors">Beranda</a>
+                <a href="#menu" class="hover:text-brand-amber transition-colors">Menu Pilihan</a>
+                <a href="#alasan" class="hover:text-brand-amber transition-colors">Keunggulan</a>
+                <a href="#testimoni" class="hover:text-brand-amber transition-colors">Testimoni</a>
+                <a href="#kontak" class="hover:text-brand-amber transition-colors">Kontak</a>
+            </nav>
+
+            <!-- CTA Button Navbar -->
+            <div class="hidden sm:block">
+                <a href="https://wa.me/6283820402201?text=Halo%20Nasgor%20Spesial,%20saya%20mau%20pesan%20makanan" 
+                   target="_blank"
+                   class="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-red to-brand-orange text-white px-5 py-2.5 rounded-full font-semibold shadow-md hover:opacity-90 transition transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pesan Sekarang</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-200 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark/95 border-b border-brand-brown px-4 pt-2 pb-6 space-y-3 text-center">
+            <a href="#home" class="block text-gray-200 hover:text-brand-amber py-2 font-medium">Beranda</a>
+            <a href="#menu" class="block text-gray-200 hover:text-brand-amber py-2 font-medium">Menu Pilihan</a>
+            <a href="#alasan" class="block text-gray-200 hover:text-brand-amber py-2 font-medium">Keunggulan</a>
+            <a href="#testimoni" class="block text-gray-200 hover:text-brand-amber py-2 font-medium">Testimoni</a>
+            <a href="#kontak" class="block text-gray-200 hover:text-brand-amber py-2 font-medium">Kontak</a>
+            <a href="https://wa.me/6283820402201?text=Halo%20Nasgor%20Spesial,%20saya%20mau%20pesan%20makanan" 
+               target="_blank"
+               class="inline-flex items-center justify-center space-x-2 bg-brand-red text-white w-full py-3 rounded-full font-semibold shadow-md">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Pesan via WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen hero-bg flex items-center pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left Text Content -->
+            <div class="space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-amber px-4 py-1.5 rounded-full text-sm font-semibold">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Resep Warisan Nusantara</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                    Sensasi Gurih & Aromatis <span class="text-gradient">Nasi Goreng Spesial</span>
+                </h1>
+                <p class="text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 font-light">
+                    Dimasak dengan bumbu rempah pilihan, kecap istimewa, dan teknik memasak kuali panas yang menghasilkan aroma *smoky* sempurna di setiap suapan.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="https://wa.me/6283820402201?text=Halo%20Nasgor%20Spesial,%20saya%20mau%20pesan%20nasi%20goreng" 
+                       target="_blank" 
+                       class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-green-500/30 transition transform hover:-translate-y-1">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Pesan Sekarang via WA</span>
+                    </a>
+                    <a href="#menu" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-full font-semibold transition">
+                        <span>Lihat Menu</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+
+                <!-- Info Badges -->
+                <div class="pt-6 grid grid-cols-3 gap-4 border-t border-gray-800 text-gray-300">
+                    <div>
+                        <p class="text-2xl font-bold text-brand-amber">100%</p>
+                        <p class="text-xs text-gray-400">Halal & Higienis</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-brand-amber">15 Min</p>
+                        <p class="text-xs text-gray-400">Siap & Cepat</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-brand-amber">4.9 ★</p>
+                        <p class="text-xs text-gray-400">Rating Pelanggan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Featured Dish Card -->
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-md bg-gradient-to-b from-brand-brown/80 to-brand-dark/90 p-4 rounded-3xl border border-brand-orange/30 shadow-2xl backdrop-blur-sm">
+                    <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" 
+                         alt="Nasi Goreng Spesial Telur & Ayam" 
+                         class="w-full h-72 sm:h-80 object-cover rounded-2xl shadow-md">
+                    
+                    <div class="p-4 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Best Seller</span>
+                            <span class="text-brand-amber font-bold text-xl">Rp 25.000</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Nasgor Spesial Komplit</h3>
+                        <p class="text-gray-300 text-sm">Nasi goreng rempah + Ayam Suwir + Telur Mata Sapi + Bakso + Kerupuk & Acar Segar.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Keunggulan / Why Choose Us -->
+    <section id="alasan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-brand-red uppercase">Alasan Memilih Kami</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Mengapa Nasi Goreng Kami Selalu Dirindukan?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-brand-cream p-8 rounded-2xl border border-brand-orange/10 hover:border-brand-orange/40 hover:shadow-xl transition duration-300 text-center space-y-4">
+                    <div class="w-16 h-16 bg-brand-orange/10 text-brand-orange rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold">
+                        <i class="fa-solid fa-pepper-hot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark">Bumbu Rempah Asli</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Dibuat menggunakan racikan rempah-rempah segar pilihan tanpa pengawet sintetik untuk cita rasa autentik.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brand-cream p-8 rounded-2xl border border-brand-orange/10 hover:border-brand-orange/40 hover:shadow-xl transition duration-300 text-center space-y-4">
+                    <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark">Aroma Wok Hei (Smoky)</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Dimasak dengan api besar khas kuali restoran untuk menghadirkan aroma wangi gurih menggugah selera.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brand-cream p-8 rounded-2xl border border-brand-orange/10 hover:border-brand-orange/40 hover:shadow-xl transition duration-300 text-center space-y-4">
+                    <div class="w-16 h-16 bg-brand-amber/10 text-brand-amber rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold">
+                        <i class="fa-solid fa-drumstick-bite"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark">Porsi Melimpah & Toping</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Porsi kenyang dengan aneka pilihan topping berlimpah: ayam, daging sapi, seafood, sosis, dan bakso.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-brand-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-brand-red uppercase">Pilihan Spesial</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Daftar Menu Favorit Pelanggan</p>
+                <p class="text-gray-600 mt-2">Pilih varian favoritmu dan pesan langsung via WhatsApp!</p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Menu Item 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-gray-100">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80" alt="Nasgor Spesial Ayam" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full">Favorit</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="text-xl font-bold text-brand-dark">Nasgor Spesial Ayam</h3>
+                                <span class="text-lg font-bold text-brand-red">Rp 20.000</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Nasi goreng gurih dengan potongan ayam juicy, telur, acar, dan kerupuk renyah.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <a href="https://wa.me/6283820402201?text=Saya%20mau%20pesan%20Nasgor%20Spesial%20Ayam" 
+                           target="_blank"
+                           class="w-full inline-flex items-center justify-center space-x-2 bg-brand-brown hover:bg-brand-dark text-white py-2.5 rounded-xl font-semibold transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Pesan Menu Ini</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-gray-100">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80" alt="Nasgor Seafood" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-brand-amber text-white text-xs font-bold px-3 py-1 rounded-full">Rekomendasi</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="text-xl font-bold text-brand-dark">Nasgor Seafood Rempah</h3>
+                                <span class="text-lg font-bold text-brand-red">Rp 27.000</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Nasi goreng harum bertabur udang segar, cumi empuk, dan bumbu bumbu istimewa.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <a href="https://wa.me/6283820402201?text=Saya%20mau%20pesan%20Nasgor%20Seafood%20Rempah" 
+                           target="_blank"
+                           class="w-full inline-flex items-center justify-center space-x-2 bg-brand-brown hover:bg-brand-dark text-white py-2.5 rounded-xl font-semibold transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Pesan Menu Ini</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-gray-100">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Nasgor Gila Pedas" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="text-xl font-bold text-brand-dark">Nasgor Gila Pedas</h3>
+                                <span class="text-lg font-bold text-brand-red">Rp 23.000</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Pecinta pedas wajib coba! Tumisan sosis, bakso, dan telur melimpah di atas nasi goreng cabai segar.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <a href="https://wa.me/6283820402201?text=Saya%20mau%20pesan%20Nasgor%20Gila%20Pedas" 
+                           target="_blank"
+                           class="w-full inline-flex items-center justify-center space-x-2 bg-brand-brown hover:bg-brand-dark text-white py-2.5 rounded-xl font-semibold transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Pesan Menu Ini</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-gray-100">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80" alt="Nasgor Sapi Smoked" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="text-xl font-bold text-brand-dark">Nasgor Daging Sapi</h3>
+                                <span class="text-lg font-bold text-brand-red">Rp 28.000</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Nasi goreng aromatis dipadu irisan daging sapi empuk bernutrisi tinggi.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <a href="https://wa.me/6283820402201?text=Saya%20mau%20pesan%20Nasgor%20Daging%20Sapi" 
+                           target="_blank"
+                           class="w-full inline-flex items-center justify-center space-x-2 bg-brand-brown hover:bg-brand-dark text-white py-2.5 rounded-xl font-semibold transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Pesan Menu Ini</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menu Item 5 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-gray-100">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80" alt="Nasgor Mawut" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="text-xl font-bold text-brand-dark">Nasgor Mawut (Mie + Nasi)</h3>
+                                <span class="text-lg font-bold text-brand-red">Rp 22.000</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Perpaduan sempurna nasi dan mie kuning tumis dengan sayuran segar dan topping komplit.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <a href="https://wa.me/6283820402201?text=Saya%20mau%20pesan%20Nasgor%20Mawut" 
+                           target="_blank"
+                           class="w-full inline-flex items-center justify-center space-x-2 bg-brand-brown hover:bg-brand-dark text-white py-2.5 rounded-xl font-semibold transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Pesan Menu Ini</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menu Item 6 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-gray-100">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Nasgor Pete Sosis" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="text-xl font-bold text-brand-dark">Nasgor Pete Spesial</h3>
+                                <span class="text-lg font-bold text-brand-red">Rp 24.000</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Aroma khas pete pilihan disangrai bersama bumbu kecap manis gurih mantap.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <a href="https://wa.me/6283820402201?text=Saya%20mau%20pesan%20Nasgor%20Pete%20Spesial" 
+                           target="_blank"
+                           class="w-full inline-flex items-center justify-center space-x-2 bg-brand-brown hover:bg-brand-dark text-white py-2.5 rounded-xl font-semibold transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Pesan Menu Ini</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Pelanggan -->
+    <section id="testimoni" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-brand-red uppercase">Kata Mereka</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Apa Kata Pelanggan Setia Kami?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-brand-cream p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic text-sm">
+                        "Nasgor Seafood-nya juara banget! Bumbunya meresap dan aroma smoky-nya dapet banget. Portinya bikin kenyang!"
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-orange/30 flex items-center justify-center font-bold text-brand-brown">
+                            B
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-dark">Budi Santoso</h4>
+                            <p class="text-xs text-gray-500">Pelanggan Setia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 2 -->
+                <div class="bg-brand-cream p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic text-sm">
+                        "Pesan via WhatsApp responnya cepat banget. Sampai rumah nasi gorengnya masih hangat dan rasanya tetep mantap."
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-red/30 flex items-center justify-center font-bold text-brand-red">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-dark">Siti Rahmawati</h4>
+                            <p class="text-xs text-gray-500">Ibu Rumah Tangga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 3 -->
+                <div class="bg-brand-cream p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic text-sm">
+                        "Nasgor Gila Pedas langganan pas lembur di kantor. Pedasnya pas, topingnya melimpah gak pelit!"
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-amber/30 flex items-center justify-center font-bold text-brand-amber">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-dark">Reza Pratama</h4>
+                            <p class="text-xs text-gray-500">Karyawan Swasta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Call to Action (CTA) -->
+    <section class="py-16 bg-gradient-to-r from-brand-red via-brand-orange to-brand-amber text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+            <h2 class="text-3xl sm:text-5xl font-extrabold">Lapar Sekarang? Pesan Tanpa Ribet!</h2>
+            <p class="text-lg max-w-2xl mx-auto opacity-90 font-light">
+                Nikmati kelezatan Nasi Goreng Spesial langsung diantar ke lokasi Anda. Klik tombol di bawah ini untuk terhubung langsung via WhatsApp.
+            </p>
+            <div class="pt-2">
+                <a href="https://wa.me/6283820402201?text=Halo%20Nasgor%20Spesial,%20saya%20mau%20pesan%20sekarang" 
+                   target="_blank"
+                   class="inline-flex items-center space-x-3 bg-white text-brand-red hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg shadow-2xl transition transform hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-2xl text-green-500"></i>
+                    <span>Pesan Sekarang (0838-2040-2201)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Kontak & Jam Operasional -->
+    <section id="kontak" class="py-20 bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <!-- Info Kontak -->
+            <div class="space-y-6">
+                <h2 class="text-3xl font-extrabold text-brand-amber">Lokasi & Pemesanan</h2>
+                <p class="text-gray-300">
+                    Kami melayani pemesanan langsung di tempat (Dine-in), Takeaway, maupun pesan antar via WhatsApp.
+                </p>
+
+                <div class="space-y-4 pt-4">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg bg-brand-brown flex items-center justify-center text-brand-amber flex-shrink-0">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-200">Nomor WhatsApp / Telepon</h4>
+                            <a href="https://wa.me/6283820402201" target="_blank" class="text-brand-amber hover:underline font-bold text-lg">
+                                0838-2040-2201
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg bg-brand-brown flex items-center justify-center text-brand-amber flex-shrink-0">
+                            <i class="fa-solid fa-clock text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-200">Jam Operasional</h4>
+                            <p class="text-gray-400 text-sm">Senin - Minggu: 16.00 - 23.00 WIB</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg bg-brand-brown flex items-center justify-center text-brand-amber flex-shrink-0">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-200">Alamat Kedai</h4>
+                            <p class="text-gray-400 text-sm">Jl. Kuliner Lezat No. 88, Area UMKM Kota</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Pesan Cepat -->
+            <div class="bg-brand-brown/50 p-8 rounded-3xl border border-brand-orange/20 shadow-xl">
+                <h3 class="text-2xl font-bold mb-4 text-white">Form Pemesanan Cepat</h3>
+                <form id="orderForm" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Nama Pemesan</label>
+                        <input type="text" id="nama" placeholder="Masukkan nama Anda" required 
+                               class="w-full px-4 py-3 rounded-xl bg-brand-dark/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-amber">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Pilihan Menu</label>
+                        <select id="menuPilihan" required class="w-full px-4 py-3 rounded-xl bg-brand-dark/80 border border-gray-700 text-white focus:outline-none focus:border-brand-amber">
+                            <option value="Nasgor Spesial Ayam">Nasgor Spesial Ayam - Rp 20.000</option>
+                            <option value="Nasgor Seafood Rempah">Nasgor Seafood Rempah - Rp 27.000</option>
+                            <option value="Nasgor Gila Pedas">Nasgor Gila Pedas - Rp 23.000</option>
+                            <option value="Nasgor Daging Sapi">Nasgor Daging Sapi - Rp 28.000</option>
+                            <option value="Nasgor Mawut">Nasgor Mawut - Rp 22.000</option>
+                            <option value="Nasgor Pete Spesial">Nasgor Pete Spesial - Rp 24.000</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Jumlah Porsi & Catatan (opsional)</label>
+                        <textarea id="catatan" rows="2" placeholder="Contoh: 2 porsi, pedas sedang, tanpa timun" 
+                                  class="w-full px-4 py-3 rounded-xl bg-brand-dark/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-amber"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3.5 rounded-xl font-bold transition flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Kirim Pesanan via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Floating WA Button (Fixed Bottom Right) -->
+    <a href="https://wa.me/6283820402201?text=Halo%20Nasgor%20Spesial,%20saya%20mau%20order" 
+       target="_blank"
+       aria-label="Pesan via WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 UMKM Nasi Goreng Spesial. All Rights Reserved.</p>
+            <p class="mt-1 text-xs">Dibuat dengan rasa cinta & rempah asli Nusantara.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktivitas -->
+    <script>
+        // Toggle Mobile Menu Navigation
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Form Submit Handler -> Direct to WhatsApp
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama').value;
+            const menu = document.getElementById('menuPilihan').value;
+            const catatan = document.getElementById('catatan').value;
+
+            const text = `Halo Nasgor Spesial, saya mau pesan:%0A- Nama: ${encodeURIComponent(nama)}%0A- Menu: ${encodeURIComponent(menu)}%0A- Catatan: ${encodeURIComponent(catatan || '-')}`;
+            
+            window.open(`https://wa.me/6283820402201?text=${text}`, '_blank');
+        });
+    </script>
+</body>
+</html>
